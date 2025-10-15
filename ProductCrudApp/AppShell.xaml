@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="ProductCrudApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ProductCrudApp"
+    xmlns:p="clr-namespace:ProductCrudApp.Views.Product"
+    xmlns:c="clr-namespace:ProductCrudApp.Views.Category"
+    Shell.FlyoutBehavior="Flyout"
+    Title="ProductCrudApp">
+
+    <Shell.FlyoutHeader>
+        <Grid HeightRequest="56" BackgroundColor="{StaticResource Primary}">
+            <Label  Text="ProductCrudApp" VerticalOptions="Center" HorizontalOptions="Center" TextColor="White" FontSize="20" FontAttributes="Bold"/>
+        </Grid>
+    </Shell.FlyoutHeader>
+    
+    <ShellContent
+        Title="Product"
+        ContentTemplate="{DataTemplate p:ProductListPage}"
+        Route="ProductPage" />
+
+    <ShellContent
+        Title="Category"
+        ContentTemplate="{DataTemplate c:CategoryListPage}"
+        Route="CategoryPage" />
+
+</Shell>
